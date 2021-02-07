@@ -1,11 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import rabiyaprofile from './image/profile.jpg'
+import technologies from './image/frontend_technologies.png'
 
 const rootElement = document.getElementById('root')
-const user = (
-  <div>
+//user images
+/*const user = (
+  <div className='profileimg'>
     <img src={rabiyaprofile} alt='rabiya profile'/>
+  </div>
+)*/
+//user knows technology
+const usertech = (
+  <div className='techimage-wrapper'>
+    <img src={technologies} alt='technologies know'/>
   </div>
 )
 //inject headre
@@ -54,7 +62,7 @@ const main = (
           {techFormatted}
           {result}
         {personAge}
-        {user}
+        {usertech}
           </ul>
           </div>
       </main>
