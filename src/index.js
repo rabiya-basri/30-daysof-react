@@ -1,17 +1,78 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import rabiyaprofile from './image/profile.jpg'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const rootElement = document.getElementById('root')
+const user = (
+  <div>
+    <img src={rabiyaprofile} alt='rabiya profile'/>
+  </div>
+)
+//inject headre
+const welcome = 'Welcome to 30 days of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+    firstname: 'Rabiy',
+    lastname: 'Basri'
+}
+const date = '5th feb 2021'
+// JSX element
+const header=(
+    <header>
+      <div className='header-wrapper'>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>{author.firstname} {author.lastname}</p>
+      <small>{date}</small>
+      </div>
+      </header>
+)
+//inject main
+const numone = 2
+const numtwo = 3
+const result = (
+    <p>{numone} + {numtwo} = {numone + numtwo}</p>
+    )
+    const yearBorn = 1999
+    const currentYear = new Date().getFullYear()
+    const age = currentYear-yearBorn
+    const personAge = (
+        <p>{' '}
+          {author.firstname} {author.lastname} is {age} Years old
+          </p>
+    )
+    const techs = ['HTML','CSS','JAVASCRIPT']
+    const techFormatted = techs.map((tech)=><li key={tech}>{tech}</li>)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const main = (
+    <main>
+      <div className='main-wrapper'>
+      <p>pre requireties to get stated{' '}<strong><em> with react</em></strong>...</p>
+      <ul>
+          {techFormatted}
+          {result}
+        {personAge}
+        {user}
+          </ul>
+          </div>
+      </main>
+)
+
+const copyRight = 'copyrights @rabiyabasri 2021'
+const footer = (
+    <footer>
+      <div className='footer-wrapper'>
+      <p>{copyRight}</p>
+      </div>
+      </footer>
+)
+      const app = (
+          <div>
+              {header}
+              {main}
+              {footer}
+              </div>
+      )
+ReactDOM.render(app,rootElement)
